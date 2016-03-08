@@ -1,4 +1,4 @@
-TEMPLATE_NAME = com.redhat.viaq-jenkins
+TEMPLATE_NAME = com.redhat.viaq-ci
 
 all: $(TEMPLATE_NAME).template.json $(TEMPLATE_NAME).asciidoc
 .PHONY: all clean
