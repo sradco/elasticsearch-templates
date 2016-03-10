@@ -54,6 +54,8 @@ def fields_to_es_template(input, skeleton, output):
         if map_type not in ["version", "defaults"]:
             fields_to_mappings(docs, template, map_type)
 
+    add_template_version(docs["version"],template)
+
     json.dump(template, output,
               indent=2, separators=(',', ': '),
               sort_keys=True)
@@ -155,6 +157,11 @@ def fill_subfields(field, defaults):
         if len(prop) is not 0:
             properties["fields"] = prop
     return properties
+
+def add_template_version(version,template):
+    """replaces <version> placeholder in the template(index name and _meta) with the actual version number"""
+    template["mappings"]["_default_"]["_meta"]["version"] = version
+    template["template"] = template["template"].replace("<version>", version) 
 
 if __name__ == "__main__":
 

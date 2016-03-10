@@ -2,12 +2,8 @@
   "aliases": {},
   "mappings": {
     "_default_": {
-      "_all": {
-        "enabled": true,
-        "omit_norms": true
-      },
       "_meta": {
-        "version": "2016-02-23.0"
+        "version": "2016.03.10.0"
       },
       "date_detection": false,
       "dynamic_templates": [
@@ -335,12 +331,8 @@
       }
     },
     "openstack": {
-      "_all": {
-        "enabled": true,
-        "omit_norms": true
-      },
       "_meta": {
-        "version": "2016-02-23.0"
+        "version": "2016.03.10.0"
       },
       "date_detection": false,
       "properties": {
@@ -394,5 +386,5 @@
   "settings": {
     "index.refresh_interval": "5s"
   },
-  "template": "viaq-*"
+  "template": "v2016.03.10.0-viaq-*"
 }

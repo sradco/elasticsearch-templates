@@ -3,7 +3,7 @@
     "mappings": {
         "_default_": {
             "_meta": {
-                "version": "2016-03-10.0"
+                "version": "<version>"
             },
             "date_detection": false,
             "dynamic_templates": [
@@ -44,5 +44,5 @@
     "settings": {
         "index.refresh_interval": "5s"
     },
-    "template": "v2016.03.10.0-viaq-*"
+    "template": "v<version>-viaq-*"
 }
