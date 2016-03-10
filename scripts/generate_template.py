@@ -59,9 +59,8 @@ def fields_to_es_template(input, skeleton, output):
               sort_keys=True)
 
 def fields_to_mappings(source, template, mapping_type):
-
+    """ fill mapping 'properties' for the provided mapping_type"""
     defaults = source["defaults"]
-    properties = {}
 
     prop = fill_section_properties(source[mapping_type], defaults)
     template["mappings"][mapping_type]["properties"] = prop
