@@ -43,6 +43,13 @@ def fields_to_es_template(input, skeleton, output):
     # Load skeleton
     template = json.load(skeleton)
 
+    # Prepare skeleton adding empty sections for each mapping type
+    for map_type in docs.keys():
+        if map_type not in ["version", "defaults"]:
+            if map_type != "_default_":
+                template["mappings"][map_type] = template["mappings"]["_default_"].copy()
+                del template["mappings"][map_type]["dynamic_templates"]
+
     for map_type in docs.keys():
         if map_type not in ["version", "defaults"]:
             fields_to_mappings(docs, template, map_type)
@@ -55,16 +62,9 @@ def fields_to_mappings(source, template, mapping_type):
 
     defaults = source["defaults"]
     properties = {}
-    prop = fill_section_properties(source["_default_"], defaults)
-    properties.update(prop)
 
-    if mapping_type != "_default_":
-        # prepare the skeleton by cloning the mappings structure:
-        template["mappings"][mapping_type] = template["mappings"]["_default_"].copy()
-        del template["mappings"][mapping_type]["dynamic_templates"]
-        prop = fill_section_properties(source[mapping_type], defaults)
-        properties.update(prop)
-    template["mappings"][mapping_type]["properties"] = properties
+    prop = fill_section_properties(source[mapping_type], defaults)
+    template["mappings"][mapping_type]["properties"] = prop
 
 
 
