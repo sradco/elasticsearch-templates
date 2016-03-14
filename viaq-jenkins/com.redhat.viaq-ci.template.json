@@ -100,6 +100,10 @@
             }
           }
         },
+        "file": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
         "geoip": {
           "dynamic": true,
           "properties": {
@@ -140,6 +144,9 @@
           },
           "type": "string"
         },
+        "offset": {
+          "type": "integer"
+        },
         "pid": {
           "index": "not_analyzed",
           "type": "string"
@@ -151,10 +158,9 @@
               "type": "string"
             },
             "original_raw_message": {
-              "index": "not_analyzed",
               "type": "string"
             },
-            "timegenerated": {
+            "received_at": {
               "format": "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ||yyyy-MM-dd'T'HH:mm:ssZ||dateOptionalTime",
               "type": "date"
             },
@@ -170,6 +176,186 @@
         },
         "tags": {
           "analyzer": "whitespace",
+          "type": "string"
+        },
+        "task_process": {
+          "index": "not_analyzed",
+          "type": "string"
+        }
+      }
+    },
+    "jenkins_logs": {
+      "_all": {
+        "enabled": true,
+        "omit_norms": true
+      },
+      "_meta": {
+        "version": "2016-02-23.0"
+      },
+      "date_detection": false,
+      "properties": {
+        "@timestamp": {
+          "fields": {
+            "raw": {
+              "ignore_above": 256,
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          },
+          "format": "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ||yyyy-MM-dd'T'HH:mm:ssZ||dateOptionalTime",
+          "type": "date"
+        },
+        "@version": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "ci_agent": {
+          "properties": {
+            "label": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "name": {
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "ci_job": {
+          "properties": {
+            "build_id": {
+              "type": "integer"
+            },
+            "log_url": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "name": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "phase": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "status": {
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "ci_master": {
+          "properties": {
+            "hostname": {
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "file": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "geoip": {
+          "dynamic": true,
+          "properties": {
+            "location": {
+              "type": "geo_point"
+            }
+          },
+          "type": "object"
+        },
+        "hostname": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "ipaddr4": {
+          "fields": {
+            "raw": {
+              "ignore_above": 256,
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          },
+          "norms": {
+            "enabled": false
+          },
+          "type": "ip"
+        },
+        "ipaddr6": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "level": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "message": {
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "offset": {
+          "type": "integer"
+        },
+        "pid": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "pipeline_metadata": {
+          "properties": {
+            "inputname": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "original_raw_message": {
+              "type": "string"
+            },
+            "received_at": {
+              "format": "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ||yyyy-MM-dd'T'HH:mm:ssZ||dateOptionalTime",
+              "type": "date"
+            },
+            "trace": {
+              "analyzer": "whitespace",
+              "type": "string"
+            }
+          }
+        },
+        "rhci": {
+          "properties": {
+            "ise_ci_branch": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "iso_source": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "pit_branch": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "project_name": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "scenario_name": {
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "service": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "tags": {
+          "analyzer": "whitespace",
+          "type": "string"
+        },
+        "task_process": {
+          "index": "not_analyzed",
           "type": "string"
         }
       }
