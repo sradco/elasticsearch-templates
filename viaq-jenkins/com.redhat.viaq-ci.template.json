@@ -177,10 +177,6 @@
         "tags": {
           "analyzer": "whitespace",
           "type": "string"
-        },
-        "task_process": {
-          "index": "not_analyzed",
-          "type": "string"
         }
       }
     },
@@ -213,6 +209,10 @@
               "type": "string"
             },
             "scenario_name": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "task_process": {
               "index": "not_analyzed",
               "type": "string"
             }

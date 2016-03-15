@@ -219,12 +219,6 @@ _default_:
       description: >
         offset of the message in the logs file. 
 
-    - name: task_process
-      type: string
-      index: not_analyzed
-      description: >
-        offset of the message in the logs file. 
-
 jenkins_logs:
   type: group
   description: >
@@ -271,6 +265,12 @@ jenkins_logs:
         index: not_analyzed
         description: >
           TODO.
+
+      - name: task_process
+        type: string
+        index: not_analyzed
+        description: >
+          offset of the message in the logs file.
 
 doc_sections:
   - ["_default_", "Common logging metadata for CI"]

@@ -237,13 +237,6 @@ type: integer
 offset of the message in the logs file. 
 
 
-==== task_process
-
-type: string
-
-offset of the message in the logs file. 
-
-
 [[exported-fields-jenkins_logs]]
 === RHCI-specific information Fields
 
@@ -297,5 +290,12 @@ TODO.
 type: string
 
 TODO.
+
+
+==== task_process
+
+type: string
+
+offset of the message in the logs file.
 
 
