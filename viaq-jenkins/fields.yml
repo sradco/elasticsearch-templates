@@ -1,4 +1,4 @@
-version: 2016-03-14.0
+version: 2016.03.16.0
 
 defaults:
   type: string
@@ -225,7 +225,7 @@ _default_:
       description: >
         offset of the message in the logs file. 
 
-jenkins_logs:
+jenkins_data:
   type: group
   description: >
     RHCI-specific mapping. It inherits all the fields from _default_ mapping
@@ -397,6 +397,6 @@ jenkins_logs:
 
 doc_sections:
   - ["_default_", "Common logging metadata for CI"]
-  - ["jenkins_logs", "RHCI-specific information"]
+  - ["jenkins_data", "RHCI-specific information"]
 
 

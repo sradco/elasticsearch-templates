@@ -10,7 +10,7 @@ This document describes the fields that are exported by Com.Redhat.Viaq-Ci. They
 grouped in the following categories:
 
 * <<exported-fields-_default_>>
-* <<exported-fields-jenkins_logs>>
+* <<exported-fields-jenkins_data>>
 
 [[exported-fields-_default_]]
 === Common logging metadata for CI Fields
@@ -244,7 +244,7 @@ type: integer
 offset of the message in the logs file. 
 
 
-[[exported-fields-jenkins_logs]]
+[[exported-fields-jenkins_data]]
 === RHCI-specific information Fields
 
 RHCI-specific mapping. It inherits all the fields from _default_ mapping
