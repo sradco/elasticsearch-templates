@@ -208,6 +208,12 @@ _default_:
         description: >
           URL to the html log of the CI job.
 
+      - name: full_url
+        type: string
+        index: not_analyzed
+        description: >
+          Full URL to the CI job on the CI master.
+
     - name: file
       type: string
       index: not_analyzed
@@ -271,6 +277,123 @@ jenkins_logs:
         index: not_analyzed
         description: >
           offset of the message in the logs file.
+
+      - name: BKR_JOBID
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: CI_MESSAGE
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: EXISTING_NODES
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: PRIVATE_IPS
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: PROVISION_JOB
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: SITE
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: UUID
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: cleanup
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: deployment_target
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: disconnected_mode
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: email-list
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: job_type
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: jobstartwait
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: junk
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: phase2_pipeline
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: teardown
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: LABEL
+        type: string
+        index: not_analyzed
+        description: >
+          TODO
+
+      - name: osp_controller_count
+        type: integer
+        description: >
+          TODO
+
+      - name: osp_hypervisor_count
+        type: integer
+        description: >
+          TODO
+
+      - name: rhev_hypervisor_count
+        type: integer
+        description: >
+          TODO
 
 doc_sections:
   - ["_default_", "Common logging metadata for CI"]
