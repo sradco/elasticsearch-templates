@@ -7,7 +7,7 @@
         "omit_norms": true
       },
       "_meta": {
-        "version": "2016.03.16.0"
+        "version": "2016.03.21.0"
       },
       "date_detection": false,
       "dynamic_templates": [
@@ -149,7 +149,8 @@
           "type": "string"
         },
         "offset": {
-          "type": "integer"
+          "doc_values": "true",
+          "type": "long"
         },
         "pid": {
           "index": "not_analyzed",
@@ -157,16 +158,70 @@
         },
         "pipeline_metadata": {
           "properties": {
-            "inputname": {
+            "@version": {
               "index": "not_analyzed",
               "type": "string"
             },
+            "collector": {
+              "properties": {
+                "hostname": {
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "inputname": {
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "ipaddr4": {
+                  "fields": {
+                    "raw": {
+                      "ignore_above": 256,
+                      "index": "not_analyzed",
+                      "type": "string"
+                    }
+                  },
+                  "norms": {
+                    "enabled": false
+                  },
+                  "type": "ip"
+                },
+                "received_at": {
+                  "format": "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ||yyyy-MM-dd'T'HH:mm:ssZ||dateOptionalTime",
+                  "type": "date"
+                }
+              }
+            },
+            "normalizer": {
+              "properties": {
+                "hostname": {
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "inputname": {
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "ipaddr4": {
+                  "fields": {
+                    "raw": {
+                      "ignore_above": 256,
+                      "index": "not_analyzed",
+                      "type": "string"
+                    }
+                  },
+                  "norms": {
+                    "enabled": false
+                  },
+                  "type": "ip"
+                },
+                "received_at": {
+                  "format": "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ||yyyy-MM-dd'T'HH:mm:ssZ||dateOptionalTime",
+                  "type": "date"
+                }
+              }
+            },
             "original_raw_message": {
               "type": "string"
-            },
-            "received_at": {
-              "format": "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ||yyyy-MM-dd'T'HH:mm:ssZ||dateOptionalTime",
-              "type": "date"
             },
             "trace": {
               "analyzer": "whitespace",
@@ -190,7 +245,7 @@
         "omit_norms": true
       },
       "_meta": {
-        "version": "2016.03.16.0"
+        "version": "2016.03.21.0"
       },
       "date_detection": false,
       "properties": {
@@ -306,5 +361,5 @@
   "settings": {
     "index.refresh_interval": "5s"
   },
-  "template": "rhci-v2016.03.16.0-jenkins-*"
+  "template": "rhci-v2016.03.21.0-jenkins-*"
 }
