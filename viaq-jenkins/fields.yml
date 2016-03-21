@@ -138,6 +138,13 @@ _default_:
           description: >
             Time when the message was received at the collector.
 
+        - name: name
+          type: string
+          example: shipshift
+          index: not_analyzed
+          description: >
+            The name of the collector
+
       - name: normalizer
         type: group
         description: >
@@ -171,7 +178,14 @@ _default_:
           type: date
           format: yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ||yyyy-MM-dd'T'HH:mm:ssZ||dateOptionalTime
           description: >
-            Time when the message was received at the collector.
+            Time when the message was received at the normalizer.
+
+        - name: name
+          type: string
+          example: rhci-logstash
+          index: not_analyzed
+          description: >
+            The name of the normalizer
 
       - name: "@version"
         index: not_analyzed
